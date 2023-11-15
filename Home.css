@@ -337,19 +337,19 @@ img.active {
 
 /* Background images for each product */
 .product-card.lumber {
-    background-image: url('images/lum2.jpg');
+    background-image: url('lum2.jpg');
 }
 
 .product-card.veneer {
-    background-image: url('images/vn4.jpg');
+    background-image: url('vn4.jpg');
 }
 
 .product-card.moulding {
-    background-image: url('images/fj.jpg');
+    background-image: url('fj.jpg');
 }
 
 .product-card.plywood {
-    background-image: url('images/pl1.jpg');
+    background-image: url('pl1.jpg');
 }
 
 
