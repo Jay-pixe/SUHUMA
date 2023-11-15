@@ -16,15 +16,6 @@ body {
     /* Add more responsive styles as needed */
 }
 
-/* Adjustments for medium-sized screens */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    /* Example: Decrease font size or adjust spacing for medium-sized screens */
-    .review-text {
-        font-size: 9px;
-        margin-bottom: 8px;
-    }
-
-
 img {
     max-width: 100%;
     height: auto;
