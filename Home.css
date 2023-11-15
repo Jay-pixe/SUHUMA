@@ -5,24 +5,7 @@ body {
     background-color: #ffffff;   
     color: #333;
 }
-/* Adjustments for smaller screens */
-@media only screen and (max-width: 767px) {
-    /* Example: Stack elements vertically on smaller screens */
-    .testimonial {
-        display: block;
-        margin-bottom: 20px;
-    }
 
-    /* Add more responsive styles as needed */
-}
-
-/* Adjustments for medium-sized screens */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    /* Example: Decrease font size or adjust spacing for medium-sized screens */
-    .review-text {
-        font-size: 14px;
-        margin-bottom: 8px;
-    }
 
 h2{
    text-align: center;
