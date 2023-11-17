@@ -71,3 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Existing JavaScript code remains unchanged
+
+    // Additional JavaScript for handling mobile menu (if needed)
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', function () {
+        navLinks.classList.toggle('show');
+    });
+});
+
