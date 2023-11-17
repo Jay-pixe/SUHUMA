@@ -6,16 +6,7 @@ body {
     color: #333;
 }
 
-@media only screen and (max-width: 767px) {
-    /* Example: Stack elements vertically on smaller screens */
-    .testimonial {
-        display: block;
-        margin-bottom: 20px;
-    }
 
-    /* Add more responsive styles as needed */
-}
- 
 h2{
    text-align: center;
     text-decoration: none;
@@ -446,4 +437,17 @@ footer {
    padding: 20px;
    text-align: center;
    font-size: 14px;
+}
+
+/* Add the following media query for better responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens go here */
+    .section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .right-content {
+        width: 100%;
+    }
 }
