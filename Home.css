@@ -112,6 +112,7 @@ nav {
 /* Styles for the slideshow section */
 .slideshow {
     width: 100%;
+   height:100px
     overflow: hidden;
     position: relative;
 }
@@ -119,7 +120,7 @@ nav {
 
 .slideshow img {   /*This is to adjust the image settings*/
     width: 100%;
-    height: 70%;
+    height: 100%;
     object-fit: cover; /* Maintain image aspect ratio and cover the container */
     position: absolute;
     opacity: 0;
