@@ -1,79 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-    <script defer src="script.js"></script>
-    <title>John Bitar and Co. Ltd</title>
+	<meta charset="utf-8">
+	<title>JCM</title>
+	<link rel="stylesheet" type="text/css" href="Home.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
+	<!--This start the header-->
+<header class="sticky-header">
+        <nav>
+            <div class="logo">
+                <h1>John Bitar & Co Ltd.</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Home Page.html">Home</a></li>
+                <li><a href="About.html">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <!--<span class="dropdown-icon">▼</span>-->
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Lumber</a></li>
+                        <li><a href="#">Slice Veneer</a></li>
+                        <li><a href="#">Rotary Veneer</a></li>
+                        <li><a href="#">Plywood</a></li>
+                        <li><a href="#">Moulding</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+               <a href="#">Sustainability</a>
+                <ul class="dropdown-menu">
+                    <li><a href="Sustainable_Sourcing.html">Sustainable Timber Sourcing</a></li>
+                    <li><a href="#">Certification & Compliance</a></li>    
+                    <li><a href="#">Sustainable Practices</a></li>
+                    <li><a href="#">Partnerships & Collaborations</a></li>
+                    </ul>
+                </li>
+                <li><a href="Awards.html">Awards</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<header>
-    <div class="logo">John Bitar and Co. Ltd</div>
-    <div class="menu-icon" onclick="toggleMenu()">&#9776; Menu</div>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li class="dropdown">
-                <a href="#products">Products</a>
-                <div class="dropdown-content">
-                    <a href="#lumber">Lumber</a>
-                    <a href="#veneer">Slice Veneer</a>
-                    <a href="#rotary">Rotary</a>
-                    <a href="#plywood">Plywood</a>
-                    <a href="#molding">Molding</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="#sustainability">Sustainability</a>
-                <div class="dropdown-content">
-                    <a href="#sourcing">Sustainable Timber Sourcing</a>
-                    <a href="#certification">Certification and Compliance</a>
-                    <a href="#practices">Sustainable Practices</a>
-                    <a href="#partnerships">Partnerships & Collaborations </a>
-                </div>
-            </li>
-            <li><a href="#awards">Awards</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<!--for the slide show-->
-<section class="slideshow">
-    <div class="slide fade">
-        <img src="images/b7.jpg" alt="Slide 1">
-    </div>
-    <div class="slide fade">
-        <img src="images/b6.jpg" alt="Slide 2">
-    </div>
-    <div class="slide fade">
-        <img src="images/b8.jpg" alt="Slide 3">
-    </div>
-    <div class="slogan">CRAFTING TIMBER, SHAPING DREAMS</div>
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
-</section>
+<!--This start the slides-->
+
+    	
+   <section class="slideshow-section">
+   	<div class="slogan">
+   		<h1>CRAFTING TIMBER, SHAPING DREAMS</h1>
+   	</div>
+        <div class="slideshow">
+            <img src="b6.jpg" alt="Image 1">
+            <img src="b7.jpg" alt="Image 2">
+            <img src="b8.jpg" alt="Image 3">
+        </div>
+          <a class="prev" onclick="prevSlide()">&#10094;</a>
+        <a class="next" onclick="nextSlide()">&#10095;</a>
+    </section>
 
 
-<div class="section">
-    <div class="left-content">
-        <h2>About Us</h2>
-        <p>At John Bitar & Co, LTD, we take immense pride in our commitment to delivering high-quality timber products to meet a variety of construction and woodworking needs. With years of industry expertise and a dedication to sustainable practices, we have established ourselves as a leading timber production company.</p>
-    </div>
-    <div class="right-content">
-        <img src="images/jcm.jpg" alt="Company Image">
-    </div>
-</div>
 
-<!-- Why Choose Us Section -->
+     <div class="section">
+        <div class="left-content">
+            <h2>About Us</h2>
+            <p>At John Bitar & Co, LTD, we take immense pride in our commitment to delivering high-quality timber products to meet a variety of construction and woodworking needs. With years of industry expertise and a dedication to sustainable practices, we have established ourselves as a leading timber production company.</p>
+        </div>
+        <div class="right-content">
+            <img src="jcm.jpg" alt="Company Image">
+        </div>
+    </div>
+
+   <!-- Why Choose Us Section -->
 <section id="why-choose-us">
     <h2>Why Choose Us</h2>
     <div class="card-container">
         <!-- Card 1: Quality Timber -->
         <div class="card">
-            <img src="images/clock.png" alt="Quality Timber">
+            <img src="clock.png" alt="Quality Timber">
             <div class="card-content">
                 <h3>Quality Timber</h3>
                 <p>We provide top-notch quality timber that meets industry standards.</p>
@@ -82,7 +88,7 @@
 
         <!-- Card 2: Sustainability -->
         <div class="card">
-            <img src="images/sus.png" alt="Sustainability">
+            <img src="sus.png" alt="Sustainability">
             <div class="card-content">
                 <h3>Sustainability</h3>
                 <p>Our commitment to sustainability ensures eco-friendly practices throughout our production.</p>
@@ -91,7 +97,7 @@
 
         <!-- Card 3: Experienced Team -->
         <div class="card">
-            <img src="images/tm.png" alt="Experienced Team">
+            <img src="tm.png" alt="Experienced Team">
             <div class="card-content">
                 <h3>Experienced Team</h3>
                 <p>Our team brings years of expertise to deliver the best solutions for your timber needs.</p>
@@ -113,31 +119,31 @@
     <div class="product-container">
         <!-- Product 1: Lumber -->
         <div class="product" id="lumber">
-            <div class="product-image" style="background-image: url('images/lum2.jpg');"></div>
+            <div class="product-image" style="background-image: url('lum2.jpg');"></div>
             <div class="product-name"><a href="https://www.ucc.edu.gh">Lumber</a></div>
         </div>
 
         <!-- Product 2: Slice Veneer -->
         <div class="product" id="slice-veneer">
-            <div class="product-image" style="background-image: url('images/vn4.jpg');"></div>
+            <div class="product-image" style="background-image: url('vn4.jpg');"></div>
             <div class="product-name">Slice Veneer</div>
         </div>
 
         <!-- Product 3: Rotary -->
         <div class="product" id="rotary">
-            <div class="product-image" style="background-image: url('images/vn1.jpg');"></div>
+            <div class="product-image" style="background-image: url('vn3.jpg');"></div>
             <div class="product-name">Rotary</div>
         </div>
 
         <!-- Product 4: Plywood -->
         <div class="product" id="plywood">
-            <div class="product-image" style="background-image: url('images/pl1.jpg');"></div>
+            <div class="product-image" style="background-image: url('pl1.jpg');"></div>
             <div class="product-name">Plywood</div>
         </div>
 
         <!-- Product 5: Molding -->
         <div class="product" id="molding">
-            <div class="product-image" style="background-image: url('images/fj.jpg');"></div>
+            <div class="product-image" style="background-image: url('fj.jpg');"></div>
             <div class="product-name">Molding</div>
         </div>
     </div>
@@ -150,28 +156,28 @@
         <!-- Review 1 -->
         <div class="review">
             <div class="customer-info">
-                <img src="images/md.jfif" alt="Customer 1" class="customer-avatar">
-                <div class="customer-name">John Doe</div>
+                <img src="md.jfif" alt="Customer 1" class="customer-avatar">
+                <div class="customer-name">Stockman</div>
             </div>
-            <p class="review-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in turpis vel justo commodo bibendum ac ut nisl. Ut a metus vel ligula pharetra blandit.</p>
+            <p class="review-text">I recently purchased lumber products from John Bitar, and I couldn't be happier with the quality and service. The wood is top-notch, and the team at John Bitar was incredibly helpful throughout the entire process. They provided excellent advice on which type of timber would best suit my project. The delivery was prompt, and the pricing was very competitive. I highly recommend John Bitar for anyone in need of high-quality timber.</p>
         </div>
 
         <!-- Review 2 -->
         <div class="review">
             <div class="customer-info">
-                <img src="images/ad.jfif" alt="Customer 2" class="customer-avatar">
-                <div class="customer-name">Jane Smith</div>
+                <img src="ad.jfif" alt="Customer 2" class="customer-avatar">
+                <div class="customer-name">Keflico</div>
             </div>
-            <p class="review-text">Suspendisse potenti. Vivamus finibus commodo mi, vitae volutpat ligula suscipit in. Aenean eu tellus non justo posuere fringilla.</p>
+            <p class="review-text">Working with John Bitar for our construction project was a fantastic experience. The timber we received was not only of exceptional quality but also arrived on time, meeting our project deadlines seamlessly. What sets John Bitar apart is their commitment to customer satisfaction. The staff is knowledgeable and went above and beyond to ensure we got the right timber for our specific needs. We'll definitely be returning for future projects.</p>
         </div>
 
          <!-- Review 3 -->
          <div class="review">
             <div class="customer-info">
-                <img src="images/ad.jfif" alt="Customer 3" class="customer-avatar">
-                <div class="customer-name">Jane Smith</div>
+                <img src="ad.jfif" alt="Customer 3" class="customer-avatar">
+                <div class="customer-name">RJC</div>
             </div>
-            <p class="review-text">Suspendisse potenti. Vivamus finibus commodo mi, vitae volutpat ligula suscipit in. Aenean eu tellus non justo posuere fringilla.</p>
+            <p class="review-text">John Bitar exceeded my expectations in every way. From the moment I inquired about their timber products to the delivery of the materials, the entire process was smooth and efficient. The timber itself is beautiful, and it's evident that John Bitar takes pride in providing only the best to their customers. The attention to detail and commitment to environmentally friendly practices also stood out to me. If you're in the market for high-quality timber and excellent service, look no further than John Bitar.</p>
         </div>
 
 
@@ -180,16 +186,19 @@
     </div>
 </section>
 
-<!-- Map Section -->
-<section id="map">
+<section class="map-section">
     <h2>Our Location</h2>
-    <div class="map-container">
-        <!-- Replace the following iframe with the embed code from Google Maps or any other map provider -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.305572056311!2d-2.4831438257372103!3d6.223379426579693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc34d6784372671%3A0x60d4d28ad8a97c5c!2sJohn%20Bitar%20Company%20Limited!5e0!3m2!1sen!2sgh!4v1700507317425!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <!-- Paste the embedded map code here -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.3056122657563!2d-2.4805688999999997!3d6.223374099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc34d6784372671%3A0x60d4d28ad8a97c5c!2sJohn%20Bitar%20Company%20Limited!5e0!3m2!1sen!2sgh!4v1697237869854!5m2!1sen!2sgh" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
 </section>
 
-<!-- Add your content sections here -->
+
+  <footer>
+        <p>&copy; 2023 John Bitar & Co. LTD. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+   
+
 
 </body>
 </html>
