@@ -1,191 +1,176 @@
 body {
-   margin: 0px;
-    padding: 0px;
-    font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
-    background-color: #ffffff;   
-    color: #333;
-}
-
-
-h2{
-   text-align: center;
-    text-decoration: none;
-    /*color: #fff;*/
-    font-variant: small-caps;
-    color: #051937;
+    margin: 0px;
+     padding: 0px;
      font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
-}
-  
-h1{
-    text-decoration: none;
-    /*color: #fff;*/
-    font-variant: small-caps;
-    color: #ffffff;
-    font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
-}
-.sticky-header{
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   background-color: #051937;
-   background-repeat: no-repeat;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
-   z-index: 100; /* Set a high z-index to ensure it's on top of other content */
+     background-color: #ffffff;   
+     color: #333;
+ }
+ 
 
-}
-
-
-nav {
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
+.logo {
+    font-size: 1.5em;
+}
 
+nav {
+    display: flex;
+}
 
-/* Dropdown styles */
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .dropdown {
     position: relative;
 }
 
-.dropdown-menu {
+.dropdown-content {
     display: none;
     position: absolute;
-    top: 100%;
-    left: 0;
     background-color: #333;
-    list-style: none;
-    margin: 0px;
-    padding:0px;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-     z-index: 1; /* Add this line it brings the drop down above the slide share*/
-     padding-bottom: 0px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    width: 200px;
+    z-index: 1;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
     display: block;
 }
 
-.dropdown-menu li {
-    padding: 10px;
+.menu-icon {
+    display: none;
+    cursor: pointer;
 }
 
-/* Additional styles for better user experience (optional) */
-.dropdown a {
-    text-decoration: none;
-     font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
+@media only screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+       
+    }
 
+.logo {
+    font-size: 1.5em;
 }
 
-.dropdown a:hover {
-    text-decoration: underline;
-    color: whitesmoke;
+@media only screen and (max-width: 768px) {
+    .logo {
+        font-size: 1.2em; /* Adjust the size for smaller screens */
+    }
+    
 }
 
-/* Styling for the dropdown icon */
-.dropdown-icon {
-    color: #F7B318;
-    font-size: 14px;
-    /*margin-left: 2px;  Adjust the spacing as needed */
+    nav {
+        display: none;
+        position: fixed;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: #333;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav.open {
+        display: flex;
+    }
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
 
-.nav-links li {
-    margin-right: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: white;
-     font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
-}
-
-
-
-/* Styles for the slideshow section */
 .slideshow {
-    width: 100%;
-   height:600px;
-    overflow: hidden;
     position: relative;
-}
-
-
-.slideshow img {   /*This is to adjust the image settings*/
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Maintain image aspect ratio and cover the container */
-    position: absolute;
-    opacity: 0;
-    transition: opacity 3s ease-in-out; /* Transition effect for opacity */ /*This was 1s then i changed to 3s it make it slow and nice*/
+    max-width: 100%;
+    height: 600px;
+    margin: auto;
+    overflow: hidden;
 }
 
-img.active {
-    opacity: 1;
+.slide {
+    display: none;
+}
+/*there was an existing image id here of which i changed it and limited it just tot the slide share image*/
+.slideshow img{
+    width: 100%;
 }
 
-.prev, .next {
+.slogan {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 2em;
+    z-index: 1;
+    text-align: center;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    width: auto;
     padding: 16px;
-    font-size: 20px;
+    margin-top: -22px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
     user-select: none;
 }
 
 .prev {
-    color: white;
-    left: 0;
+    left: 16px;
 }
 
 .next {
-    color: white;
-    right: 0;
-}
-.slogan {
-    position: absolute; /* Position the slogan absolutely */
-    top: 50%; /* Position it in the vertical center */
-    left: 50%; /* Position it in the horizontal center */
-    transform: translate(-50%, -50%); /* Center it precisely */
-    color: white;
-     z-index: 1; /* Ensure the slogan is above the images */
+    right: 16px;
 }
 
-.slogan {
-    font-family: 'Raleway', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    color: #fff; /* Choose a suitable text color for contrast */
-    text-align: center;
-    padding: 0px;
-    /*background-color: #007BFF;  Choose a suitable background color */
-    border-radius: 10px; /* Add rounded corners */
-    /* Add any additional styles to make it attractive */
-}
-.slogan {
-    /* ... (previous styles) ... */
-    transition: background-color 0.3s, color 0.3s;
+.fade {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Styles for the sections */
-.explore-products {
-    background-color: #ffffff;
-    padding: 20px;
-    color: #333333;
+@media only screen and (max-width: 768px) {
+    .slogan {
+        font-size: 1.5em; /* Adjust the font size for smaller screens */
+    }
 }
-
-.explore-products .container {
-    text-align: center;
-}
-
 
 /*This starts the about us*/
 .section {
@@ -222,232 +207,227 @@ img.active {
     transition: transform 1s, opacity 1s;
 }
 
+@media only screen and (max-width: 768px) {
+    .about-us {
+        flex-direction: column;
+        align-items: center;
+    }
 
-/*this ends the about us*/
+    .about-text,
+    .company-image {
+        animation: none; /* Remove animation on smaller screens */
+        opacity: 1; /* Set opacity to 1 for immediate display */
+        transform: none; /* Remove any transforms applied by animation */
+    }
+}
 
-.cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #051937;
+
+/* Why Choose Us Section Styles */
+#why-choose-us {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    margin: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 50px;
+    display: block;
+    margin: 10px auto;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+/* Responsive Styles for Cards */
+@media screen and (max-width: 600px) {
+    .card {
+        width: 70%;
+    }
+}
+
+
+/* Explore Our Products Section Styles */
+#explore-products {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#explore-products button {
+    background-color: #333;
     color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-.cta-button:hover {
-    background-color: #051937;
+/*this start the explore our products*/
+#explore-products button:hover {
+    background-color: #555;
 }
 
-/* CSS for the "Why Choose Us" section */
-.why-choose {
-    background-color: #f5f5f5;
-    padding: 20px;
-}
-
-/* Style for the heading (H2) */
-.why-choose h2 {
-    text-align: center;
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-/* Style for the cards container */
-.cards {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-/* Style for each card */
-.card {
+/* Products Section Styles */
+#products {
     background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 50px 0;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Style for card images */
-.card img {
-    max-width: 100%;
-    max-height: 150px;
-    border-radius: 5px 5px 0 0;
-}
-
-/* Style for card headings */
-.card h3 {
-    font-size: 1.2em;
-    color: #051937;
-}
-
-/* Style for card descriptions */
-.card p {
-    color: #777;
-}
-
-/*Why choose us ends here*/
-
-/* Styles for the product cards section */
-.product-cards {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.product-cards .container {
-    max-width: 1000px;
-    height: 400px;
-    margin: 0 auto;
+.product-container {
     display: flex;
     justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Ensures products stay in one line */
+    overflow-x: auto; /* Enables horizontal scrolling on smaller screens */
 }
 
-.product-card {
+.product {
+    width: 30%;
+    min-width: 200px; /* Set a minimum width for each product card */
+    margin: 10px;
+    overflow: hidden;
     border-radius: 10px;
-    margin: 20px;
-    flex: 1;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    text-align: center;
-    color: #fff;
-    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
 }
 
-.product-card:hover {
+.product:hover {
     transform: scale(1.05);
 }
 
-.product-card a {
-    text-decoration: none;
+.product-image {
+    height: 200px;
+    background-size: cover;
 }
 
-.container h3{
-     font-family: 'Raleway', sans-serif;
-     font-variant: small-caps;
-    cursor: pointer;
-    color: #ffffff;
-}
-
-
-/* Background images for each product */
-.product-card.lumber {
-    background-image: url('lum2.jpg');
-}
-
-.product-card.veneer {
-    background-image: url('vn4.jpg');
-}
-
-.product-card.moulding {
-    background-image: url('fj.jpg');
-}
-
-.product-card.plywood {
-    background-image: url('pl1.jpg');
-}
-
-
-/* Styles for the testimonial section */
-.testimonial-section {
-    background-color: #051937;
-    color: white;
-    padding: 40px 0;
-}
-
-.testimonial-container {
-    overflow: hidden;
-    white-space: nowrap;
-}
-
-.testimonial {
-    display: inline-block;
-    margin-right: 20px;
-    opacity: 0;
-    animation: scrollTestimonial 20s linear infinite; /* Set the duration to 20 seconds */
-}
-
-.container h2{
-color: white;
-}
-.review-text {
-    font-style: italic;
-    margin-bottom: 10px;
-}
-
-.customer-info {
+.product-name {
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
     text-align: center;
 }
 
-.customer-info img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
+@media screen and (max-width: 900px) {
+    .product {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product {
+        width: 70%;
+        min-width: auto; /* Remove the minimum width on smaller screens */
+    }
+}
+
+
+/* Customer Reviews Section Styles */
+#customer-reviews {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+    text-align: center;
+    opacity: 0;
+    animation: fade-in 1s ease-out forwards;
+}
+
+/* Add this style to ensure the animation works */
+#customer-reviews.visible {
+    opacity: 1;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.review-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.review {
+    width: 45%; /* Adjusted for smaller screens */
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.review:hover {
+    transform: scale(1.05);
+}
+
+.customer-info {
+    display: flex;
+    flex-direction: column; /* Stack the customer info on smaller screens */
+    align-items: center;
     margin-bottom: 10px;
+}
+
+.customer-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 5px;
 }
 
 .customer-name {
     font-weight: bold;
 }
 
-@keyframes scrollTestimonial {
-    0% {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-
-    10%, 25% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    35%, 100% {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
+.review-text {
+    font-size: 16px;
 }
 
 
-/* Styles for the map section */
-.map-section {
-    background-color: #e6e6e6;
-    padding: 20px;
+/* Map Section Styles */
+#map {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
 }
 
-.map-section h2{
-    color: black;
+.map-container {
+    width: 100%;
+    max-width: 100%; /* Adjust the maximum width as needed for larger screens */
+    margin: 20px auto;
 }
 
-/* Style for the map */
-iframe {
-    width: 100%; /* Adjust the width as needed */
-    height: 450px; /* Adjust the height as needed */
-}
-
-
-footer {
-  
-  /* background-color: #DDDDDD; color before*/
-  background-color:#051937;
-  color: white;
-   padding: 20px;
-   text-align: center;
-   font-size: 14px;
-}
-
-/* Add the following media query for better responsiveness */
-@media screen and (max-width: 768px) {
-    /* Adjustments for smaller screens go here */
-    .section {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .right-content {
-        width: 100%;
+/* Responsive Styles for Map */
+@media screen and (max-width: 600px) {
+    .map-container {
+        width: 90%; /* Adjust as needed for smaller screens */
     }
 }
