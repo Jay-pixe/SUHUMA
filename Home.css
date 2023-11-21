@@ -1,176 +1,191 @@
 body {
-    margin: 0px;
-     padding: 0px;
+   margin: 0px;
+    padding: 0px;
+    font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
+    background-color: #ffffff;   
+    color: #333;
+}
+
+
+h2{
+   text-align: center;
+    text-decoration: none;
+    font-variant: small-caps;
+    color: #051937;
      font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
-     background-color: #ffffff;   
-     color: #333;
- }
- 
-
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
 }
 
-.logo {
-    font-size: 1.5em;
+h1{
+    text-decoration: none;
+    font-variant: small-caps;
+    color: #ffffff;
+    font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
 }
+
+
+.sticky-header{
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: #051937;
+   background-repeat: no-repeat;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect */
+   z-index: 100; /* Set a high z-index to ensure it's on top of other content */
+
+}
+
 
 nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
 
-nav ul li {
-    margin-right: 20px;
-}
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
+/* Dropdown styles */
 .dropdown {
     position: relative;
 }
 
-.dropdown-content {
+.dropdown-menu {
     display: none;
     position: absolute;
+    top: 100%;
+    left: 0;
     background-color: #333;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    width: 200px;
-    z-index: 1;
+    list-style: none;
+    margin: 0px;
+    padding:0px;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     z-index: 1; /* Add this line it brings the drop down above the slide share*/
+     padding-bottom: 0px;
 }
 
-.dropdown-content a {
-    color: #fff;
-    padding: 12px 16px;
+.dropdown:hover .dropdown-menu {
     display: block;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+}
+
+/* Additional styles for better user experience (optional) */
+.dropdown a {
     text-decoration: none;
+     font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
+
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+.dropdown a:hover {
+    text-decoration: underline;
+    color: whitesmoke;
 }
 
-.menu-icon {
-    display: none;
-    cursor: pointer;
+/* Styling for the dropdown icon */
+.dropdown-icon {
+    color: #F7B318;
+    font-size: 14px;
+    /*margin-left: 2px;  Adjust the spacing as needed */
 }
 
-@media only screen and (max-width: 768px) {
-    .menu-icon {
-        display: block;
-       
-    }
-
-.logo {
-    font-size: 1.5em;
+.nav-links {
+    list-style: none;
+    display: flex;
 }
 
-@media only screen and (max-width: 768px) {
-    .logo {
-        font-size: 1.2em; /* Adjust the size for smaller screens */
-    }
-    
+.nav-links li {
+    margin-right: 20px;
 }
 
-    nav {
-        display: none;
-        position: fixed;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background-color: #333;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: flex-end;
-        padding: 10px;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    nav.open {
-        display: flex;
-    }
+.nav-links a {
+    text-decoration: none;
+    color: white;
+     font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
 }
 
 
+
+/* Styles for the slideshow section */
 .slideshow {
-    position: relative;
     width: 100%;
-    max-width: 100%;
-    height: 600px;
-    margin: auto;
+    height: 600px; /* Adjust the height as needed */
     overflow: hidden;
+    position: relative;
 }
 
-.slide {
-    display: none;
-}
-/*there was an existing image id here of which i changed it and limited it just tot the slide share image*/
-.slideshow img{
+
+.slideshow img {   /*This is to adjust the image settings*/
     width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain image aspect ratio and cover the container */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 3s ease-in-out; /* Transition effect for opacity */ /*This was 1s then i changed to 3s it make it slow and nice*/
 }
 
-.slogan {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 2em;
-    z-index: 1;
-    text-align: center;
+img.active {
+    opacity: 1;
 }
 
-.prev,
-.next {
+.prev, .next {
     position: absolute;
     top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #fff;
-    font-size: 24px;
+    transform: translateY(-50%);
     cursor: pointer;
+    padding: 16px;
+    font-size: 20px;
     user-select: none;
 }
 
 .prev {
-    left: 16px;
+    color: white;
+    left: 0;
 }
 
 .next {
-    right: 16px;
+    color: white;
+    right: 0;
+}
+.slogan {
+    position: absolute; /* Position the slogan absolutely */
+    top: 50%; /* Position it in the vertical center */
+    left: 50%; /* Position it in the horizontal center */
+    transform: translate(-50%, -50%); /* Center it precisely */
+    color: white;
+     z-index: 1; /* Ensure the slogan is above the images */
 }
 
-.fade {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+.slogan {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff; /* Choose a suitable text color for contrast */
+    text-align: center;
+    padding: 0px;
+    /*background-color: #007BFF;  Choose a suitable background color */
+    border-radius: 10px; /* Add rounded corners */
+    /* Add any additional styles to make it attractive */
+}
+.slogan {
+    /* ... (previous styles) ... */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-@media only screen and (max-width: 768px) {
-    .slogan {
-        font-size: 1.5em; /* Adjust the font size for smaller screens */
-    }
+/* Styles for the sections */
+.explore-products {
+    background-color: #ffffff;
+    padding: 20px;
+    color: #333333;
 }
+
+.explore-products .container {
+    text-align: center;
+}
+
 
 /*This starts the about us*/
 .section {
@@ -207,20 +222,8 @@ nav ul li a {
     transition: transform 1s, opacity 1s;
 }
 
-@media only screen and (max-width: 768px) {
-    .about-us {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .about-text,
-    .company-image {
-        animation: none; /* Remove animation on smaller screens */
-        opacity: 1; /* Set opacity to 1 for immediate display */
-        transform: none; /* Remove any transforms applied by animation */
-    }
-}
-
+/*this ends the about us*/
 
 /* Why Choose Us Section Styles */
 #why-choose-us {
@@ -408,26 +411,49 @@ nav ul li a {
 }
 
 .review-text {
-    font-size: 16px;
+
+    font-family: Cambria,Cochin, Georgia, Times, 'Times New Roman', serif,Arial,'Raleway', sans-serif;
+    text-align: justify;
 }
 
 
-/* Map Section Styles */
-#map {
-    background-color: #fff;
-    padding: 50px 0;
-    text-align: center;
+/* Styles for the map section */
+.map-section {
+    background-color: #e6e6e6;
+    padding: 20px;
 }
 
-.map-container {
-    width: 100%;
-    max-width: 100%; /* Adjust the maximum width as needed for larger screens */
-    margin: 20px auto;
+.map-section h2{
+    color: black;
 }
 
-/* Responsive Styles for Map */
-@media screen and (max-width: 600px) {
-    .map-container {
-        width: 90%; /* Adjust as needed for smaller screens */
+/* Style for the map */
+iframe {
+    width: 100%; /* Adjust the width as needed */
+    height: 450px; /* Adjust the height as needed */
+}
+
+
+footer {
+  
+  /* background-color: #DDDDDD; color before*/
+  background-color:#051937;
+  color: white;
+   padding: 20px;
+   text-align: center;
+   font-size: 14px;
+}
+
+
+/* Add the following media query for better responsiveness */
+@media screen and (max-width: 768px) {
+    /* Adjustments for smaller screens go here */
+    .section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .right-content {
+        width: 100%;
     }
 }
