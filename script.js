@@ -83,3 +83,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
+///why choose us
+
+function toggleMenu() {
+    var menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+///explore our products
+function toggleMenu() {
+    var menu = document.getElementById('menu');
+    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+}
+
+function scrollToProducts() {
+    var productsSection = document.getElementById('products');
+    productsSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+///Customer review
+document.addEventListener('DOMContentLoaded', function () {
+    var customerReviews = document.getElementById('customer-reviews');
+    customerReviews.classList.add('visible');
+});
